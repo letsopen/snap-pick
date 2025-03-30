@@ -52,19 +52,39 @@ namespace SnapPick
             if (!isRunning)
                 return;
 
-            if (GetCursorPos(out POINT point))
+            try
             {
-                IntPtr hdc = GetDC(IntPtr.Zero);
-                int colorRef = GetPixel(hdc, point.X, point.Y);
-                ReleaseDC(IntPtr.Zero, hdc);
+                if (GetCursorPos(out POINT point))
+                {
+                    IntPtr hdc = GetDC(IntPtr.Zero);
+                    int colorRef = GetPixel(hdc, point.X, point.Y);
+                    ReleaseDC(IntPtr.Zero, hdc);
 
-                Color color = Color.FromArgb(
-                    (colorRef >> 0) & 0xFF,   // R
-                    (colorRef >> 8) & 0xFF,   // G
-                    (colorRef >> 16) & 0xFF   // B
-                );
+                    Color color = Color.FromArgb(
+                        (colorRef >> 0) & 0xFF,   // R
+                        (colorRef >> 8) & 0xFF,   // G
+                        (colorRef >> 16) & 0xFF   // B
+                    );
 
-                ColorChanged?.Invoke(this, color);
+                    // 使用主线程调用事件
+                    if (ColorChanged != null)
+                    {
+                        var mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+                        if (mainForm != null)
+                        {
+                            mainForm.Invoke(() => ColorChanged?.Invoke(this, color));
+                        }
+                        else
+                        {
+                            ColorChanged?.Invoke(this, color);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // 记录异常，防止定时器停止
+                Console.WriteLine($"取色错误: {ex.Message}");
             }
         }
     }

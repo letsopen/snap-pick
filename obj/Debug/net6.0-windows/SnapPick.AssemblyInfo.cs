@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SnapPick")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2dc6dff13f17509bf467fbd7e1bd7da1016680fe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+454b2b777f676de35f319b18b4a06bec6ca988dc")]
 [assembly: System.Reflection.AssemblyProductAttribute("SnapPick")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SnapPick")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -9,6 +9,11 @@ namespace SnapPick
         {
             InitializeComponent();
             PositionWindow();
+            
+            // 添加以下代码确保窗体可见
+            this.Opacity = 0.9; // 设置透明度
+            this.ShowInTaskbar = false;
+            this.TopMost = true;
         }
 
         private void InitializeComponent()
@@ -54,6 +59,7 @@ namespace SnapPick
             );
         }
 
+        // 修改 UpdateColor 方法
         public void UpdateColor(Color color)
         {
             // 在UI线程上更新控件
@@ -63,8 +69,14 @@ namespace SnapPick
                 return;
             }
             
+            // 确保窗体可见
+            if (!this.Visible)
+            {
+                this.Show();
+            }
+            
             colorPreviewPanel.BackColor = color;
-            colorInfoLabel.Text = $"RGB: {color.R}, {color.G}, {color.B}";
+            colorInfoLabel.Text = $"RGB: {color.R}, {color.G}, {color.B} | HEX: #{color.R:X2}{color.G:X2}{color.B:X2}";
         }
 
         protected override CreateParams CreateParams

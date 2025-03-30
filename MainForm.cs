@@ -94,16 +94,32 @@ namespace SnapPick
             // 显示颜色信息窗体
             colorInfoForm.Show();
             
+            // 先解除之前的事件绑定
+            colorPickerService.ColorChanged -= ColorPickerService_ColorChanged;
+            
+            // 重新绑定事件
+            colorPickerService.ColorChanged += ColorPickerService_ColorChanged;
+            
             // 启动取色服务
             colorPickerService.Start();
-            colorPickerService.ColorChanged += (sender, color) =>
-            {
-                colorInfoForm.UpdateColor(color);
-            };
             
             // 更新菜单项状态
             colorPickerMenuItem.Checked = true;
             screenshotMenuItem.Checked = false;
+        }
+
+        // 添加事件处理方法
+        private void ColorPickerService_ColorChanged(object? sender, Color color)
+        {
+            // 确保在UI线程上更新
+            if (InvokeRequired)
+            {
+                Invoke(() => ColorPickerService_ColorChanged(sender, color));
+                return;
+            }
+            
+            // 更新颜色信息窗体
+            colorInfoForm.UpdateColor(color);
         }
 
         private void StartScreenshotMode()

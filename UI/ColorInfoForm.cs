@@ -1,12 +1,13 @@
 using System.Drawing.Drawing2D;
-using Microsoft.Win32; // 添加此引用
+using Microsoft.Win32;
 
 namespace SnapPick
 {
     public class ColorInfoForm : Form
     {
-        private Label colorInfoLabel;
-        private Panel colorPreviewPanel;
+        // 在声明时初始化字段
+        private Label colorInfoLabel = new Label();
+        private Panel colorPreviewPanel = new Panel();
         private Color currentColor;
 
         public ColorInfoForm()

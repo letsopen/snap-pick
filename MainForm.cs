@@ -5,12 +5,13 @@ namespace SnapPick
 {
     public partial class MainForm : Form
     {
-        private NotifyIcon notifyIcon;
-        private ContextMenuStrip contextMenu;
-        private ToolStripMenuItem colorPickerMenuItem;
-        private ToolStripMenuItem screenshotMenuItem;
-        private ToolStripMenuItem autoStartMenuItem;
-        private ToolStripMenuItem exitMenuItem;
+        // 在声明时初始化字段
+        private NotifyIcon notifyIcon = new NotifyIcon();
+        private ContextMenuStrip contextMenu = new ContextMenuStrip();
+        private ToolStripMenuItem colorPickerMenuItem = new ToolStripMenuItem();
+        private ToolStripMenuItem screenshotMenuItem = new ToolStripMenuItem();
+        private ToolStripMenuItem autoStartMenuItem = new ToolStripMenuItem();
+        private ToolStripMenuItem exitMenuItem = new ToolStripMenuItem();
 
         private ColorPickerService colorPickerService;
         private ScreenshotService screenshotService;

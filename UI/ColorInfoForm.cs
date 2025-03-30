@@ -38,11 +38,11 @@ namespace SnapPick
             
             // colorInfoLabel
             this.colorInfoLabel.AutoSize = true;
-            this.colorInfoLabel.Location = new Point(50, 15);
+            this.colorInfoLabel.Location = new Point(50, 10);
             this.colorInfoLabel.Text = "RGB: 0, 0, 0";
             this.colorInfoLabel.ForeColor = Color.White;
             this.colorInfoLabel.BackColor = Color.Transparent;
-            this.colorInfoLabel.TextAlign = ContentAlignment.MiddleRight;
+            this.colorInfoLabel.TextAlign = ContentAlignment.MiddleLeft;
             this.colorInfoLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             
             // 创建一个半透明的深色背景面板
@@ -60,7 +60,7 @@ namespace SnapPick
             this.BackColor = Color.Black;
             this.TransparencyKey = Color.Black;
             this.Opacity = 0.85;
-            this.ClientSize = new Size(220, 50);
+            this.ClientSize = new Size(180, 50);
             this.FormBorderStyle = FormBorderStyle.None;
             this.ShowInTaskbar = false;
             this.TopMost = true;

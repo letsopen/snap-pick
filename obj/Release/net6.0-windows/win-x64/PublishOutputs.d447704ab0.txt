@@ -1,0 +1,6 @@
+C:\Users\Administrator\DesktopProjects\snap-pick\bin\Release\net6.0-windows\win-x64\publish\SnapPick.exe
+C:\Users\Administrator\DesktopProjects\snap-pick\bin\Release\net6.0-windows\win-x64\publish\Assets\icon.ico
+C:\Users\Administrator\DesktopProjects\snap-pick\bin\Release\net6.0-windows\win-x64\publish\SnapPick.dll
+C:\Users\Administrator\DesktopProjects\snap-pick\bin\Release\net6.0-windows\win-x64\publish\SnapPick.deps.json
+C:\Users\Administrator\DesktopProjects\snap-pick\bin\Release\net6.0-windows\win-x64\publish\SnapPick.runtimeconfig.json
+C:\Users\Administrator\DesktopProjects\snap-pick\bin\Release\net6.0-windows\win-x64\publish\SnapPick.pdb

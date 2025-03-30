@@ -1,0 +1,16 @@
+C:\Users\Administrator\DesktopProjects\snap-pick\bin\Debug\net6.0-windows\Assets\icon.ico
+C:\Users\Administrator\DesktopProjects\snap-pick\bin\Debug\net6.0-windows\SnapPick.exe
+C:\Users\Administrator\DesktopProjects\snap-pick\bin\Debug\net6.0-windows\SnapPick.deps.json
+C:\Users\Administrator\DesktopProjects\snap-pick\bin\Debug\net6.0-windows\SnapPick.runtimeconfig.json
+C:\Users\Administrator\DesktopProjects\snap-pick\bin\Debug\net6.0-windows\SnapPick.dll
+C:\Users\Administrator\DesktopProjects\snap-pick\bin\Debug\net6.0-windows\SnapPick.pdb
+C:\Users\Administrator\DesktopProjects\snap-pick\obj\Debug\net6.0-windows\SnapPick.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\DesktopProjects\snap-pick\obj\Debug\net6.0-windows\SnapPick.AssemblyInfoInputs.cache
+C:\Users\Administrator\DesktopProjects\snap-pick\obj\Debug\net6.0-windows\SnapPick.AssemblyInfo.cs
+C:\Users\Administrator\DesktopProjects\snap-pick\obj\Debug\net6.0-windows\SnapPick.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\DesktopProjects\snap-pick\obj\Debug\net6.0-windows\SnapPick.sourcelink.json
+C:\Users\Administrator\DesktopProjects\snap-pick\obj\Debug\net6.0-windows\SnapPick.dll
+C:\Users\Administrator\DesktopProjects\snap-pick\obj\Debug\net6.0-windows\refint\SnapPick.dll
+C:\Users\Administrator\DesktopProjects\snap-pick\obj\Debug\net6.0-windows\SnapPick.pdb
+C:\Users\Administrator\DesktopProjects\snap-pick\obj\Debug\net6.0-windows\SnapPick.genruntimeconfig.cache
+C:\Users\Administrator\DesktopProjects\snap-pick\obj\Debug\net6.0-windows\ref\SnapPick.dll

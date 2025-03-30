@@ -36,19 +36,31 @@ namespace SnapPick
             this.colorPreviewPanel.Size = new Size(30, 30);
             this.colorPreviewPanel.BorderStyle = BorderStyle.FixedSingle;
             
-            // colorInfoLabel - 右对齐
+            // colorInfoLabel
             this.colorInfoLabel.AutoSize = true;
             this.colorInfoLabel.Location = new Point(50, 15);
             this.colorInfoLabel.Text = "RGB: 0, 0, 0";
             this.colorInfoLabel.ForeColor = Color.White;
+            this.colorInfoLabel.BackColor = Color.Transparent;
             this.colorInfoLabel.TextAlign = ContentAlignment.MiddleRight;
-            this.colorInfoLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            this.colorInfoLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            
+            // 创建一个半透明的深色背景面板
+            Panel backgroundPanel = new Panel();
+            backgroundPanel.BackColor = Color.FromArgb(40, 40, 40);
+            backgroundPanel.Dock = DockStyle.Fill;
+            backgroundPanel.Padding = new Padding(5);
+            
+            // 将控件添加到面板
+            this.Controls.Add(backgroundPanel);
+            backgroundPanel.Controls.Add(this.colorPreviewPanel);
+            backgroundPanel.Controls.Add(this.colorInfoLabel);
             
             // ColorInfoForm
-            this.BackColor = Color.Black; // 将被设为透明色
+            this.BackColor = Color.Black;
+            this.TransparencyKey = Color.Black;
+            this.Opacity = 0.85;
             this.ClientSize = new Size(220, 50);
-            this.Controls.Add(this.colorPreviewPanel);
-            this.Controls.Add(this.colorInfoLabel);
             this.FormBorderStyle = FormBorderStyle.None;
             this.ShowInTaskbar = false;
             this.TopMost = true;
@@ -119,6 +131,11 @@ namespace SnapPick
             
             // 更新UI
             colorPreviewPanel.BackColor = color;
+            
+            // 不再根据背景调整文字颜色，始终使用白色
+            // colorInfoLabel.ForeColor = GetContrastColor(color);
+            
+            // 更新文字内容
             colorInfoLabel.Text = $"RGB: {color.R}, {color.G}, {color.B}\nHEX: #{color.R:X2}{color.G:X2}{color.B:X2}";
             
             // 确保窗口位置正确
@@ -127,6 +144,18 @@ namespace SnapPick
                 this.Show();
                 PositionWindow();
             }
+        }
+
+        // 添加一个方法来计算对比色，确保文字在任何背景下都清晰可见
+        private Color GetContrastColor(Color backgroundColor)
+        {
+            // 计算亮度 (基于人眼对RGB的感知)
+            double brightness = (backgroundColor.R * 0.299 + 
+                                 backgroundColor.G * 0.587 + 
+                                 backgroundColor.B * 0.114) / 255;
+            
+            // 如果背景较亮，返回黑色文字；否则返回白色文字
+            return brightness > 0.5 ? Color.Black : Color.White;
         }
 
         protected override CreateParams CreateParams
